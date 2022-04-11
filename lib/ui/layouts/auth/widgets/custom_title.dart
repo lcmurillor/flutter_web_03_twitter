@@ -14,7 +14,6 @@ class CustomTitle extends StatelessWidget {
           const SizedBox(height: 20),
           Image.asset('twitter-white-logo.png', width: 50, height: 50),
           const SizedBox(height: 20),
-          //TODO: Esto permite ajustar el texto al tama;o de la pantalla
           FittedBox(
             fit: BoxFit.contain,
             child: Text(

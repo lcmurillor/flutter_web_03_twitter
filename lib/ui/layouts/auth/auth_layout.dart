@@ -16,7 +16,6 @@ class AuthLayout extends StatelessWidget {
       child: ListView(
         physics: const ClampingScrollPhysics(),
         children: [
-          //TODO; Agregar este if al la documentacion
           (size.width > 1000)
               ? _DesktopBody(child: child)
               : _MobileBody(child: child),

@@ -10,7 +10,6 @@ class LinkBar extends StatelessWidget {
     return Container(
         color: Colors.black,
         height: (size.width > 1000) ? size.height * 0.07 : null,
-        //TODO: Agregar esto a la documentaciom, el wreap es como un row pero se ajusta en columns si es necesario
         child: Wrap(
           alignment: WrapAlignment.center,
           children: const [

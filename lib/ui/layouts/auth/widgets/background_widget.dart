@@ -9,7 +9,6 @@ class BackgroundTwitter extends StatelessWidget {
         child: Container(
       decoration: buildBoxDecoration(),
       child: Container(
-        //TODO: Agregar esto a mi documentación el Constrain permite ajustar el contendio para que sea responsivo
         constraints: const BoxConstraints(maxWidth: 400),
         child: const Center(
           child: Padding(
