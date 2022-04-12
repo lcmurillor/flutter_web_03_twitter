@@ -40,7 +40,7 @@ class LoginView extends StatelessWidget {
                             return null;
                           },
                           style: const TextStyle(color: Colors.white),
-                          decoration: CustomInputs.buildInputDecoration(
+                          decoration: CustomInputs.loginInputDecoration(
                               hint: 'Ingrese su correo',
                               icon: Icons.email_outlined,
                               label: 'Email'),
@@ -59,7 +59,7 @@ class LoginView extends StatelessWidget {
                             return null;
                           },
                           style: const TextStyle(color: Colors.white),
-                          decoration: CustomInputs.buildInputDecoration(
+                          decoration: CustomInputs.loginInputDecoration(
                               hint: '************',
                               icon: Icons.lock_outline_sharp,
                               label: 'Constraseña'),
