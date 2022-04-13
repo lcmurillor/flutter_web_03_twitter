@@ -29,10 +29,10 @@ class Sidebar extends StatelessWidget {
           const TextSeparator(text: 'main'),
           MenuItem(
               isActive:
-                  sideMenuProvider.currentPage == Flurorouter.dasboardRoute,
+                  sideMenuProvider.currentPage == Flurorouter.dashboardRoute,
               text: 'Dashboard',
               icon: Icons.compass_calibration_outlined,
-              onPressed: () => navigateTo(Flurorouter.dasboardRoute)),
+              onPressed: () => navigateTo(Flurorouter.dashboardRoute)),
           MenuItem(
               text: 'Orders',
               icon: Icons.shopping_cart_outlined,

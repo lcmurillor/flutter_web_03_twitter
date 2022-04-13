@@ -12,7 +12,7 @@ class DashboardHandlers {
   static Handler dashboard = Handler(handlerFunc: (context, parameters) {
     final authProvider = Provider.of<AuthProvider>(context!);
     Provider.of<SideMenuProvider>(context, listen: false)
-        .setCurrentPageUrl(Flurorouter.dasboardRoute);
+        .setCurrentPageUrl(Flurorouter.dashboardRoute);
     if (authProvider.authStatus == AuthStatus.authenticated) {
       return const DashboardView();
     } else {

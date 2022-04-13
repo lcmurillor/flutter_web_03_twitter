@@ -11,7 +11,7 @@ class Flurorouter {
   static String loginRoute = '/auth/login';
   static String registerRoute = '/auth/register';
 
-  static String dasboardRoute = '/dashboard';
+  static String dashboardRoute = '/dashboard';
   static String iconRoute = '/dashboard/icons';
   static String blankRoute = '/dashboard/blank';
 
@@ -23,7 +23,7 @@ class Flurorouter {
     router.define(registerRoute,
         handler: AdminHandlers.register, transitionType: TransitionType.none);
 
-    router.define(dasboardRoute,
+    router.define(dashboardRoute,
         handler: DashboardHandlers.dashboard,
         transitionType: TransitionType.none);
     router.define(iconRoute,
