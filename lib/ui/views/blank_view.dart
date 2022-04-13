@@ -7,11 +7,14 @@ class BlankView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(physics: const ClampingScrollPhysics(), children: [
-      Text('BlankView ', style: CustomLabels.h1),
-      const SizedBox(height: 10),
-      const WhiteCard(title: 'estadisticas', child: Text('hola mundo')),
-      const WhiteCard(child: Text('hola mundo'))
-    ]);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: ListView(physics: const ClampingScrollPhysics(), children: [
+        Text('BlankView ', style: CustomLabels.h1),
+        const SizedBox(height: 10),
+        const WhiteCard(title: 'estadisticas', child: Text('hola mundo')),
+        const WhiteCard(child: Text('hola mundo'))
+      ]),
+    );
   }
 }
