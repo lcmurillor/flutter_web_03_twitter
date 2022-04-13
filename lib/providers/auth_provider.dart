@@ -11,7 +11,6 @@ import 'package:admin_dashboard/services/navigation_service.dart';
 enum AuthStatus { checking, authenticated, notAuthenticated }
 
 class AuthProvider extends ChangeNotifier {
-  String? _token;
   AuthStatus authStatus = AuthStatus.checking;
   Usuario? user;
 
@@ -23,7 +22,7 @@ class AuthProvider extends ChangeNotifier {
     final data = {'correo': email, 'password': password};
 
     CafeApi.post('/auth/login', data).then((json) {
-      print(json);
+      //print(json);
       final authResponse = AuthResponse.fromMap(json);
       user = authResponse.usuario;
 
@@ -35,7 +34,7 @@ class AuthProvider extends ChangeNotifier {
 
       notifyListeners();
     }).catchError((e) {
-      print('error en: $e');
+      //print('error en: $e');
       NotificationsService.showSnackbarError('Usuario / Password no válidos');
     });
   }
@@ -44,7 +43,7 @@ class AuthProvider extends ChangeNotifier {
     final data = {'nombre': name, 'correo': email, 'password': password};
 
     CafeApi.post('/usuarios', data).then((json) {
-      print(json);
+      //print(json);
       final authResponse = AuthResponse.fromMap(json);
       user = authResponse.usuario;
 
@@ -55,7 +54,7 @@ class AuthProvider extends ChangeNotifier {
       CafeApi.configureDio();
       notifyListeners();
     }).catchError((e) {
-      print('error en: $e');
+      // print('error en: $e');
       NotificationsService.showSnackbarError('Usuario / Password no válidos');
     });
   }
@@ -79,7 +78,7 @@ class AuthProvider extends ChangeNotifier {
       notifyListeners();
       return true;
     } catch (e) {
-      print(e);
+      //print(e);
       authStatus = AuthStatus.notAuthenticated;
       notifyListeners();
       return false;

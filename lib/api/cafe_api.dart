@@ -16,7 +16,7 @@ class CafeApi {
       final resp = await _dio.get(path);
       return resp.data;
     } catch (e) {
-      print(e);
+      //print(e);
       throw ('Error en el GET');
     }
   }
@@ -27,7 +27,7 @@ class CafeApi {
       final resp = await _dio.post(path, data: formData);
       return resp.data;
     } catch (e) {
-      print(e);
+      //print(e);
       throw ('Error en el POST');
     }
   }
