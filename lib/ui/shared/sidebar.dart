@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
   void navigateTo(String routeName) {
-    NavigationService.navigateTo(routeName);
+    NavigationService.replaceTo(routeName);
     SideMenuProvider.closeMenu();
   }
 
