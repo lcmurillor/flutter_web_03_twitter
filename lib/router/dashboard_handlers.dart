@@ -54,9 +54,27 @@ class DashboardHandlers {
     final authProvider = Provider.of<AuthProvider>(context!);
 
     Provider.of<SideMenuProvider>(context, listen: false)
-        .setCurrentPageUrl(Flurorouter.userRoute);
+        .setCurrentPageUrl(Flurorouter.usersRoute);
     if (authProvider.authStatus == AuthStatus.authenticated) {
       return const UsersView();
+    } else {
+      return const LoginView();
+    }
+  });
+
+  static Handler user = Handler(handlerFunc: (context, parameters) {
+    final authProvider = Provider.of<AuthProvider>(context!);
+
+    Provider.of<SideMenuProvider>(context, listen: false)
+        .setCurrentPageUrl(Flurorouter.userRoute);
+    if (authProvider.authStatus == AuthStatus.authenticated) {
+      if (parameters['uid']?.first != null) {
+        return UserView(
+          uid: parameters['uid']!.first,
+        );
+      } else {
+        return const UsersView();
+      }
     } else {
       return const LoginView();
     }
