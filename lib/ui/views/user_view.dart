@@ -5,6 +5,7 @@ import 'package:admin_dashboard/ui/cards/white_card.dart';
 import 'package:admin_dashboard/ui/inputs/custom_inputs.dart';
 import 'package:admin_dashboard/ui/labels/custom_labels.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 class UserView extends StatefulWidget {
@@ -173,6 +174,9 @@ class _AvatarContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final userFormProvider = Provider.of<UserFormProvider>(context);
     final user = userFormProvider.user!;
+    final image = (user.img == null)
+        ? const Image(image: AssetImage('no-image.jpg'))
+        : FadeInImage.assetNetwork(placeholder: 'loader.gif', image: user.img!);
     return WhiteCard(
         width: 250,
         child: SizedBox(
@@ -188,8 +192,7 @@ class _AvatarContainer extends StatelessWidget {
                 height: 160,
                 child: Stack(
                   children: [
-                    const ClipOval(
-                        child: Image(image: AssetImage('no-image.jpg'))),
+                    ClipOval(child: image),
                     Positioned(
                       bottom: 5,
                       right: 5,
@@ -199,9 +202,31 @@ class _AvatarContainer extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
                             border: Border.all(color: Colors.white, width: 5)),
+
+                        ///BOTON PARA CARGAR LA IMAGEN
                         child: FloatingActionButton(
                           backgroundColor: Colors.indigo,
-                          onPressed: () {},
+                          onPressed: () async {
+                            FilePickerResult? result = await FilePicker.platform
+                                .pickFiles(
+                                    type: FileType.custom,
+                                    allowedExtensions: ['jpg', 'jpeg', 'png'],
+                                    allowMultiple: false);
+
+                            if (result != null) {
+                              //PlatformFile file = result.files.first;
+                              NotificationsService.showBusyIndicator(context);
+                              final newUser =
+                                  await userFormProvider.uploadImage(
+                                      '/uploads/usuarios/${user.uid}',
+                                      result.files.first.bytes!);
+                              Provider.of<UsersProvider>(context, listen: false)
+                                  .refreshUser(newUser);
+                              Navigator.pop(context);
+                            } else {
+                              // User canceled the picker
+                            }
+                          },
                           child:
                               const Icon(Icons.camera_alt_outlined, size: 20),
                         ),
