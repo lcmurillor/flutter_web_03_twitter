@@ -1,12 +1,8 @@
 import 'package:admin_dashboard/api/cafe_api.dart';
-import 'package:admin_dashboard/models/http/auth_response.dart';
-import 'package:admin_dashboard/services/notifications_service.dart';
-import 'package:flutter/material.dart';
-
+import 'package:admin_dashboard/models/models.dart';
 import 'package:admin_dashboard/router/router.dart';
-
-import 'package:admin_dashboard/services/local_storage.dart';
-import 'package:admin_dashboard/services/navigation_service.dart';
+import 'package:admin_dashboard/services/services.dart';
+import 'package:flutter/material.dart';
 
 enum AuthStatus { checking, authenticated, notAuthenticated }
 

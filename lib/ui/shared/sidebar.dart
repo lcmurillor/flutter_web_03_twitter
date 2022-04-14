@@ -1,12 +1,8 @@
-import 'package:admin_dashboard/providers/auth_provider.dart';
-import 'package:admin_dashboard/providers/sidemenu_provider.dart';
+import 'package:admin_dashboard/providers/providers.dart';
 import 'package:admin_dashboard/router/router.dart';
-import 'package:admin_dashboard/services/navigation_service.dart';
-import 'package:admin_dashboard/ui/shared/widgets/logo.dart';
-import 'package:admin_dashboard/ui/shared/widgets/menu_item.dart';
-import 'package:admin_dashboard/ui/shared/widgets/text_separator.dart';
+import 'package:admin_dashboard/services/services.dart';
+import 'package:admin_dashboard/ui/shared/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
@@ -59,7 +55,7 @@ class Sidebar extends StatelessWidget {
           MenuItem(
               text: 'Customers',
               icon: Icons.people_alt_outlined,
-              onPressed: () => SideMenuProvider.closeMenu()),
+              onPressed: () => navigateTo(Flurorouter.userRoute)),
           const SizedBox(height: 30),
           const TextSeparator(text: 'UI Elements'),
           MenuItem(

@@ -1,7 +1,6 @@
-import 'package:admin_dashboard/providers/sidemenu_provider.dart';
-import 'package:admin_dashboard/ui/views/no_page_found_view.dart';
+import 'package:admin_dashboard/providers/providers.dart';
+import 'package:admin_dashboard/ui/views/views.dart';
 import 'package:fluro/fluro.dart';
-import 'package:provider/provider.dart';
 
 class NoPageFoundHandlers {
   static Handler noPageFound = Handler(handlerFunc: (context, parameters) {
