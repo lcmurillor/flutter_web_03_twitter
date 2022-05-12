@@ -24,62 +24,62 @@ class Sidebar extends StatelessWidget {
           const Logo(),
           const SizedBox(height: 50),
           const TextSeparator(text: 'main'),
-          MenuItem(
+          CustomMenuItem(
               isActive:
                   sideMenuProvider.currentPage == Flurorouter.dashboardRoute,
               text: 'Dashboard',
               icon: Icons.compass_calibration_outlined,
               onPressed: () => navigateTo(Flurorouter.dashboardRoute)),
-          MenuItem(
+          CustomMenuItem(
               text: 'Orders',
               icon: Icons.shopping_cart_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               text: 'Analytic',
               icon: Icons.show_chart_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               isActive:
                   sideMenuProvider.currentPage == Flurorouter.categorieRoute,
               text: 'Categories',
               icon: Icons.layers_outlined,
               onPressed: () => navigateTo(Flurorouter.categorieRoute)),
-          MenuItem(
+          CustomMenuItem(
               text: 'Products',
               icon: Icons.dashboard_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               text: 'Discount',
               icon: Icons.attach_money_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               isActive: sideMenuProvider.currentPage == Flurorouter.usersRoute,
               text: 'Customers',
               icon: Icons.people_alt_outlined,
               onPressed: () => navigateTo(Flurorouter.usersRoute)),
           const SizedBox(height: 30),
           const TextSeparator(text: 'UI Elements'),
-          MenuItem(
+          CustomMenuItem(
               isActive: sideMenuProvider.currentPage == Flurorouter.iconRoute,
               text: 'Icons',
               icon: Icons.list_alt_outlined,
               onPressed: () => navigateTo(Flurorouter.iconRoute)),
-          MenuItem(
+          CustomMenuItem(
               text: 'Marketing',
               icon: Icons.mark_email_read_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               text: 'Campaign',
               icon: Icons.note_add_outlined,
               onPressed: () => SideMenuProvider.closeMenu()),
-          MenuItem(
+          CustomMenuItem(
               isActive: sideMenuProvider.currentPage == Flurorouter.blankRoute,
               text: 'Blank',
               icon: Icons.post_add_outlined,
               onPressed: () => navigateTo(Flurorouter.blankRoute)),
           const SizedBox(height: 30),
           const TextSeparator(text: 'Exit'),
-          MenuItem(
+          CustomMenuItem(
               text: 'Logout',
               icon: Icons.exit_to_app_outlined,
               onPressed: () {

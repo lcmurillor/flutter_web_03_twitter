@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MenuItem extends StatefulWidget {
+class CustomMenuItem extends StatefulWidget {
   final String text;
   final IconData icon;
   final bool isActive;
   final Function onPressed;
 
-  const MenuItem({
+  const CustomMenuItem({
     Key? key,
     required this.text,
     required this.icon,
@@ -16,10 +16,10 @@ class MenuItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _MenuItemState createState() => _MenuItemState();
+  _CustomMenuItemState createState() => _CustomMenuItemState();
 }
 
-class _MenuItemState extends State<MenuItem> {
+class _CustomMenuItemState extends State<CustomMenuItem> {
   bool isHovered = false;
 
   @override
